@@ -8,7 +8,7 @@ export const headerActiveStyles =
   "text-2xl text-blue-700 font-semibold hover:text-blue-500 px-4 py-2 duration-100 transition-all ease-in-out";
 
 export const headerNoActiveStyles =
-  "text-xl text-white hover:text-blue-500 duration-100 px-4 py-2 transition-all ease-in-out";
+  "text-xl text-black hover:text-blue-500 duration-100 px-4 py-2 transition-all ease-in-out";
 
 export const statuses = [
   { id: 1, title: "Salads", category: "salads" },

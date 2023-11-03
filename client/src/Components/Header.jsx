@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { ImSpoonKnife } from "react-icons/im";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Avatar, Logo } from "../assets";
+import { Avatar } from "../assets";
 import { headerActiveStyles, headerNoActiveStyles } from "../utils/styles";
 import { motion } from "framer-motion";
 import { buttonClick, slideTop } from "../Animations";
@@ -12,6 +13,16 @@ import { setUserNull } from "../context/actions/userAction";
 import { setCartOn } from "../context/actions/dispalyCartAction";
 
 const Header = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = useSelector((state) => state.user);
@@ -32,30 +43,28 @@ const Header = () => {
 
   return (
     <header
-      className="fixed backdrop-blur-md z-50 inset-x-0 top-0 flex items-center justify-between px-6 md:px-12 py-4"
-      style={{
-        backgroundColor: "#000000",
-        backgroundImage: "linear-gradient(315deg, #000000 0%, #000000 74%)",
-        //backgroundColor: "#000000d4",
-      }}
+      className="fixed backdrop-blur-2xl z-50 inset-x-0 top-0 flex items-center justify-between px-6 md:px-12 py-4 border border-b-2"
+      // style={{
+      //   backgroundColor: "#000000",
+      //   backgroundImage: "linear-gradient(315deg, #000000 0%, #000000 74%)",
+      //   //backgroundColor: "#000000d4",
+      // }}
     >
       <NavLink
         to={"/"}
-        className="flex items-center justify-center gap-2 select-none"
+        className="flex items-center justify-center gap-2 select-none px-24"
       >
-        {/* <img src={Logo} className="w-6" alt="" style={{ userSelect: "none" }} /> */}
-        <p
-          className="text-blue-700 select-none"
-          style={{
-            fontSize: "16px",
-            fontWeight: "bold",
-          }}
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="flex items-center gap-1"
         >
-          BluEmbers
-        </p>
+          <p className="text-blue-700 select-none text-xl font-md">BluEmbers</p>
+          {isHovered && <ImSpoonKnife size={20} />}
+        </div>
       </NavLink>
       <nav className="flex items-center justify-center gap-6">
-        <ul className="hidden md:flex items-center justify-center gap-6 select-none">
+        <ul className="hidden md:flex items-center justify-center gap-6 select-none text-black">
           <NavLink
             className={({ isActive }) =>
               isActive ? headerActiveStyles : headerNoActiveStyles
@@ -138,7 +147,7 @@ const Header = () => {
               className="relative cursor-pointer"
               onClick={() => dispatch(setCartOn())}
             >
-              <MdShoppingCart className="text-2xl text-white" />
+              <MdShoppingCart className="text-2xl text-black" />
               {cart?.length > 0 && (
                 <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center absolute -top-3 -right-1">
                   <p className="text-primary text-sm font-semibold">

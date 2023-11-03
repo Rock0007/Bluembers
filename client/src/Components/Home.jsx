@@ -9,7 +9,7 @@ import { HiCurrencyRupee } from "../assets/icons";
 const Home = () => {
   return (
     <div className="w-full bg-white min-h-screen flex flex-col items-center justify-center">
-      <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-screen-lg p-6 md:p-12 rounded-lg bg-primary shadow-md">
+      <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-screen-lg p-6 md:p-12 rounded-lg bg-primary shadow-xl shadow-pink-100">
         {/* Content grid column */}
         <div className="flex flex-col items-start gap-6">
           <div className="px-3 py-1 flex items-center justify-center gap-2 bg-blue-200 rounded-full">

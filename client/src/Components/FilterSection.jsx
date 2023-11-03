@@ -13,10 +13,6 @@ const FilterSection = () => {
     ? products.filter((data) => data.product_category === category)
     : [];
 
-  // const filteredProducts = products.filter(
-  //   (data) => data.product_category === category
-  // );
-
   return (
     <motion.div className="w-full flex flex-col items-center justify-start mb-10">
       <div className="w-full flex items-center justify-between mb-4">
@@ -26,7 +22,7 @@ const FilterSection = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-4 py-4 overflow-hidden overflow-x-auto overflow-y-auto">
+      <div className="grid grid-cols-11 gap-4 py-4 overflow-hidden overflow-x-auto overflow-y-auto">
         {statuses.map((data, i) => (
           <FilterCard
             key={i}

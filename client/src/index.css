@@ -13,10 +13,6 @@ body {
   overflow-x: hidden;
 }
 
-.backdrop-blur-md {
-  backdrop-filter: blur(10px);
-}
-
 .MuiPaper-root {
   width: 100%;
 }
