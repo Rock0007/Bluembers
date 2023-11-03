@@ -1,0 +1,13 @@
+export { default as loginbg } from "./img/loginbg.jpg";
+export { default as Logo } from "./img/logo.png";
+export { default as Avatar } from "./img/avatar.png";
+export { default as Mango } from "./img/mango.png";
+export { default as Delivery } from "./img/delivery.png";
+export { default as HeroBg } from "./img/heroBg.png";
+export { default as Bill } from "./img/bill.png";
+export { default as c1 } from "./img/c1.png";
+export { default as HeroineBg } from "./img/HeroineBg.avif";
+export { default as deepspace } from "./img/deepspace.jpg";
+export { default as MdOutlineFastfood } from "./img/MdOutlineFastfood.png";
+export { default as emptycart } from "./img/emptycart.png";
+export { default as Bill2 } from "./img/bill.jpeg";
