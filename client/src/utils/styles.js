@@ -1,8 +1,8 @@
 export const isActiveStyles =
-  "text-2xl text-red-700 font-semibold hover:text-red-700 px-4 py-2 duration-100 transition-all ease-in-out";
+  "text-xl text-blue-700 font-semibold bg-blue-100 px-4 py-2 duration-100 transition-all ease-in-out";
 
 export const isNoActiveStyles =
-  "text-xl text-textColor hover:text-red-700 duration-100 px-4 py-2 transition-all ease-in-out";
+  "text-xl text-textColor hover:text-blue-700 duration-100 px-4 py-2 transition-all ease-in-out flex items-center";
 
 export const headerActiveStyles =
   "text-2xl text-blue-700 font-semibold hover:text-blue-500 px-4 py-2 duration-100 transition-all ease-in-out";

@@ -115,7 +115,7 @@ const DBNewItem = () => {
                 onClick={() => setCategory(data.category)}
                 className={`px-4 py-3 rounded-md text-xl text-textColor font-semibold cursor-pointer hover:shadow-md border border-gray-200 backdrop-blur-md ${
                   data.category === category
-                    ? "bg-red-500 text-white"
+                    ? "bg-blue-500 text-white"
                     : "bg-transparent"
                 }`}
               >
@@ -147,7 +147,7 @@ const DBNewItem = () => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2.5">
                     <div
-                      className="bg-red-600 h-2.5 rounded-full transition-all duration-300 ease-in-out"
+                      className="bg-blue-600 h-2.5 rounded-full transition-all duration-300 ease-in-out"
                       style={{
                         width: `${Math.round(progress)}%`,
                       }}
@@ -191,7 +191,7 @@ const DBNewItem = () => {
                     <motion.button
                       {...buttonClick}
                       type="button"
-                      className="absolute top-3 right-3 p-3 rounded-full bg-red-500 text-xl cursor-pointer outline-none hover:shadow-md duration-500 transition-all ease-in-out"
+                      className="absolute top-3 right-3 p-3 rounded-full bg-blue-500 text-xl cursor-pointer outline-none hover:shadow-md duration-500 transition-all ease-in-out"
                       onClick={() => deleteImageFromFirebase(imageDownloadURL)}
                     >
                       <MdDelete className="-rotate-0" />
@@ -205,7 +205,7 @@ const DBNewItem = () => {
         <motion.button
           onClick={submitNewData}
           {...buttonClick}
-          className="w-9/12 py-2 rounded-md bg-red-400 text-primary hover:bg-red-500 cursor-pointer"
+          className="w-9/12 py-2 rounded-md bg-blue-500 text-primary hover:bg-blue-600 cursor-pointer font-semibold"
         >
           Save
         </motion.button>
@@ -225,7 +225,7 @@ export const InputValueField = ({
       <input
         type={type}
         placeholder={placeHolder}
-        className="w-full px-4 py-3 bg-lightOverlay shadow-md outline-none rounded-md border border-gray-200 focus:border-red-400"
+        className="w-full px-4 py-3 bg-lightOverlay shadow-md outline-none rounded-md border border-gray-200 focus:border-blue-400"
         value={stateValue}
         onChange={(e) => stateFunc(e.target.value)}
       ></input>

@@ -24,7 +24,6 @@ const Header = () => {
   };
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const [isMenu, setIsMenu] = useState(false);
@@ -42,14 +41,7 @@ const Header = () => {
   };
 
   return (
-    <header
-      className="fixed backdrop-blur-2xl z-50 inset-x-0 top-0 flex items-center justify-between px-6 md:px-12 py-4 border border-b-2"
-      // style={{
-      //   backgroundColor: "#000000",
-      //   backgroundImage: "linear-gradient(315deg, #000000 0%, #000000 74%)",
-      //   //backgroundColor: "#000000d4",
-      // }}
-    >
+    <header className="fixed backdrop-blur-2xl z-50 inset-x-0 top-0 flex items-center justify-between px-6 md:px-12 py-4 border border-b-2 shadow-fuchsia-100 shadow-xl">
       <NavLink
         to={"/"}
         className="flex items-center justify-center gap-2 select-none px-24"
@@ -59,11 +51,14 @@ const Header = () => {
           onMouseLeave={handleMouseLeave}
           className="flex items-center gap-1"
         >
-          <p className="text-blue-700 select-none text-xl font-md">BluEmbers</p>
+          <p className="text-xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent select-none">
+            BluEmbers
+          </p>
+
           {isHovered && <ImSpoonKnife size={20} />}
         </div>
       </NavLink>
-      <nav className="flex items-center justify-center gap-6">
+      <nav className="flex items-center justify-center gap-6 font-semibold">
         <ul className="hidden md:flex items-center justify-center gap-6 select-none text-black">
           <NavLink
             className={({ isActive }) =>
@@ -80,14 +75,6 @@ const Header = () => {
             to={"/menu"}
           >
             Menu
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? headerActiveStyles : headerNoActiveStyles
-            }
-            to={"/services"}
-          >
-            Services
           </NavLink>
           <NavLink
             className={({ isActive }) =>
@@ -122,12 +109,6 @@ const Header = () => {
                   to={"/menu"}
                 >
                   Menu
-                </Link>
-                <Link
-                  className="hover:text-blue-700 text-sm text-textColor"
-                  to={"/services"}
-                >
-                  Services
                 </Link>
                 <Link
                   className="hover:text-blue-700 text-sm text-textColor"
@@ -173,24 +154,24 @@ const Header = () => {
                 <motion.div
                   {...slideTop}
                   onMouseLeave={() => setIsMenu(false)}
-                  className="px-4 py-2 w-40 bg-lightOverlay backdrop-blur-md rounded-md shadow-md absolute top-10 right-0 flex flex-col gap-3"
+                  className="px-4 py-2 w-40 bg-lightOverlay backdrop-blur-xl rounded-md shadow-md absolute top-10 right-0 flex flex-col gap-3"
                 >
                   {user?.user_id === process.env.REACT_APP_ADMIN_ID && (
                     <Link
-                      className="hover:text-blue-600 text-md text-textColor font-semibold"
+                      className="hover:text-blue-600 text-md text-black font-semibold"
                       to={"/dashboard/home"}
                     >
                       Dashboard
                     </Link>
                   )}
                   <Link
-                    className="hover:text-blue-600 text-md text-textColor font-semibold"
+                    className="hover:text-blue-600 text-md text-black font-semibold"
                     to={"/profile"}
                   >
                     My Profile
                   </Link>
                   <Link
-                    className="hover:text-blue-600 text-md text-textColor font-semibold"
+                    className="hover:text-blue-600 text-md text-black font-semibold"
                     to={"/user-orders"}
                   >
                     Orders

@@ -68,42 +68,56 @@ const Login = () => {
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
-    } else if (!userEmail.endsWith("@gmail.com")) {
+      return;
+    }
+
+    if (!userEmail.endsWith("@gmail.com")) {
       dispatch(alertWarning("Invalid Gmail address"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
-    } else if (password.length < 6) {
+      return;
+    }
+
+    if (password.length < 6) {
       dispatch(alertWarning("Password must be at least 6 characters"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
-    } else if (password !== confirm_password) {
+      return;
+    }
+
+    if (password !== confirm_password) {
       dispatch(alertWarning("Passwords do not match"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
-    } else {
-      try {
-        const userCred = await createUserWithEmailAndPassword(
-          firebaseAuth,
-          userEmail,
-          password
-        );
-        firebaseAuth.onAuthStateChanged((cred) => {
-          if (cred) {
-            cred.getIdToken().then((token) => {
-              validateUserJWTToken(token).then((data) => {
-                dispatch(setUserDetails(data));
-              });
-              navigate("/", { replace: true });
+      return;
+    }
+
+    try {
+      const userCred = await createUserWithEmailAndPassword(
+        firebaseAuth,
+        userEmail,
+        password
+      );
+      firebaseAuth.onAuthStateChanged((cred) => {
+        if (cred) {
+          cred.getIdToken().then((token) => {
+            validateUserJWTToken(token).then((data) => {
+              dispatch(setUserDetails(data));
             });
-          }
-        });
-      } catch (error) {
-        console.error("Error creating user:", error);
-        // Handle any other error here
-      }
+            navigate("/", { replace: true });
+          });
+        }
+      });
+    } catch (error) {
+      console.error("Error creating user:", error);
+      // Handle specific error messages if needed
+      dispatch(alertWarning("Error creating user. Please try again."));
+      setTimeout(() => {
+        dispatch(alertNULL());
+      }, 3000);
     }
   };
 

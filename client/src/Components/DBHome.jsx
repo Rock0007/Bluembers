@@ -84,7 +84,7 @@ const DBHome = () => {
                 datasets: [
                   {
                     label: "Category Wise Count",
-                    backgroundColor: "#f87979",
+                    backgroundColor: "#93c4fd",
                     data: [
                       salads?.length,
                       appetizers?.length,

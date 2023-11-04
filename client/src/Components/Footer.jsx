@@ -21,11 +21,6 @@ const Footer = () => {
                 Menu
               </Link>
             </li>
-            <li>
-              <Link to="/services" className="hover:text-green-700">
-                Services
-              </Link>
-            </li>
           </ul>
         </div>
         <div className="w-full md:w-1/3">
@@ -45,7 +40,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center mt-8">
-        <p>&copy; 2023 FlavorFusion. All rights reserved</p>
+        <p>&copy; 2023 BluEmbers. All rights reserved</p>
         <div className="mt-4 flex justify-center space-x-4">
           <a
             href="https://www.facebook.com"

@@ -22,12 +22,18 @@ const OrderData = ({ index, data, admin }) => {
       className="w-full flex flex-col items-start justify-start px-3 py-2 border relative border-gray-300 bg-lightOverlay drop-shadow-md rounded-md gap-4"
     >
       <div className="w-full flex items-center justify-between">
-        <h1 className="text-xl text-headingColor font-semibold">Orders</h1>
+        <p className="text-lg font-semibold text-black">
+          OrderID:{" "}
+          <span className="text-base text-black font-medium">
+            {data.orderId}
+          </span>
+        </p>
+
         <div className="flex items-center gap-4">
-          <p className="flex items-center gap-1 text-textColor text-base font-medium select-none">
+          {/* <p className="flex items-center gap-1 text-textColor text-base font-medium select-none">
             Total : <HiCurrencyRupee className="text-base text-blue-500" />{" "}
             <span className="text-headingColor font-bold">{data?.total}</span>{" "}
-          </p>
+          </p> */}
           <p className="px-2 py-[2px] text-sm text-headingColor font-semibold capitalize rounded-md bg-emerald-400 drop-shadow-md select-none">
             {data?.status}
           </p>
@@ -88,7 +94,7 @@ const OrderData = ({ index, data, admin }) => {
                 <img
                   src={item.imageURL}
                   alt=""
-                  className="w-14 h-14 object-contain select-none"
+                  className="w-12 h-12 object-contain select-none"
                 />
                 <div className="flex items-start flex-col ml-5">
                   <p className="text-base font-semibold text-headingColor">
@@ -108,26 +114,25 @@ const OrderData = ({ index, data, admin }) => {
             ))}
         </div>
         <div className="flex items-start justify-start flex-col gap-2 px-6 ml-auto w-full md:w-460">
-          <h1 className="text-lg text-headingColor font-semibold">
-            {data.customer.name}
-          </h1>
-          <p className="text-base text-headingColor -mt-2">
-            Order ID: {data.orderId}
-          </p>
-        </div>
-        {admin && (
-          <div className="flex items-start justify-start flex-col gap-2 px-6 ml-auto w-full md:w-460">
-            <h1 className="text-lg text-headingColor font-semibold">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-lg text-black">
+              <span className="font-semibold">Customer:</span>{" "}
               {data.customer.name}
             </h1>
-            <p className="text-base text-headingColor -mt-2">
-              Email: {data.customer.email}
-              Phone No: {data.customer.phone}
-              <br />
-              Order ID: {data.orderId}
-            </p>
+            {admin && (
+              <>
+                <p className="text-lg text-black">
+                  <span className="font-semibold">Email:</span>{" "}
+                  {data.customer.email}
+                </p>
+                <p className="text-base text-black -mt-2">
+                  <span className="font-semibold">Ph no:</span>{" "}
+                  {data.customer.phone}
+                </p>
+              </>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </motion.div>
   );
