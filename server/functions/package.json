@@ -3,9 +3,10 @@
   "description": "Cloud Functions for Firebase",
   "scripts": {
     "lint": "eslint .",
-    "serve": "firebase emulators:start --only functions",
+    "serve": "concurrently \"npm run start-server\" \"npm run start-stripe\"",
+    "start-server": "firebase emulators:start --only functions",
+    "start-stripe": "stripe listen --forward-to http://localhost:5001/bluembers-de568/us-central1/app/api/products/webhook",
     "shell": "firebase functions:shell",
-    "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "server": "node index.js"
@@ -23,6 +24,7 @@
     "stripe": "^13.4.0"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "eslint": "^8.15.0",
     "eslint-config-google": "^0.14.0",
     "firebase-functions-test": "^3.0.0"
