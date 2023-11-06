@@ -23,22 +23,22 @@ const students = [
   },
   {
     name: "Rahul Samineni",
-    role: "Frontend Developer, Team Leader",
+    role: "Frontend Developer",
     profilePicture: Rahul,
   },
   {
     name: "Ayman Shaikh",
-    role: "Student",
+    role: "Security Analyst ",
     profilePicture: Ayman,
   },
   {
     name: "Rohan Ravula",
-    role: "Student",
+    role: "UI Designer",
     profilePicture: Rohan,
   },
   {
-    name: "Sikesh Gaddam",
-    role: "Intern",
+    name: "Srikesh Gaddam",
+    role: "Content Strategist/Communicator",
     profilePicture: Srikesh,
   },
 ];
@@ -107,19 +107,19 @@ const About = () => {
           Key Features
         </h2>
         <ul className="text-lg text-gray-700 mb-8 pl-5">
-          <li className="list-disc pl-4 mb-2">
+          <li className="list-disc mb-2">
             Easy online food ordering from any location on campus.
           </li>
-          <li className="list-disc pl-4 mb-2">
+          <li className="list-disc mb-2">
             Quick and efficient order processing.
           </li>
-          <li className="list-disc pl-4 mb-2">
+          <li className="list-disc mb-2">
             No more waiting in queues; just pick up your food when it's ready.
           </li>
-          <li className="list-disc pl-4 mb-2">
+          <li className="list-disc mb-2">
             Secure user authentication and data privacy.
           </li>
-          <li className="list-disc pl-4 mb-2">
+          <li className="list-disc mb-2">
             Seamless integration with BluEmbers restaurant services.
           </li>
         </ul>
@@ -130,28 +130,32 @@ const About = () => {
         >
           How It Works
         </h2>
-        <p className="text-lg text-gray-700 mb-8">
-          1.{" "}
-          <Link to="/login" className="underline decoration-solid">
-            Login
-          </Link>{" "}
-          using your credentials.
-          <br />
-          2. Browse the{" "}
-          <Link to="/menu" className="underline decoration-solid">
-            Menu
-          </Link>
-          , select your items add to cart, and place your order online.
-          <br />
-          3. Wait for a status indicating that your{" "}
-          <Link to="/user-orders" className="underline decoration-solid">
-            Order
-          </Link>{" "}
-          is ready for pickup.
-          <br />
-          4. Head to BluEmbers restaurant, show your order confirmation, and
-          enjoy your meal!
-        </p>
+        <ul className="text-lg text-gray-700 mb-8 pl-5">
+          <li className="list-disc mb-2">
+            <Link to="/login" className="underline decoration-solid">
+              Login
+            </Link>{" "}
+            using your credentials.
+          </li>
+          <li className="list-disc mb-2">
+            Browse the{" "}
+            <Link to="/menu" className="underline decoration-solid">
+              Menu
+            </Link>
+            , select your items add to cart, and place your order online.
+          </li>
+          <li className="list-disc mb-2">
+            Wait for a status indicating that your{" "}
+            <Link to="/user-orders" className="underline decoration-solid">
+              Order
+            </Link>{" "}
+            is ready for pickup.
+          </li>
+          <li className="list-disc mb-2">
+            Head to BluEmbers restaurant, show your order confirmation, and
+            enjoy your meal!
+          </li>
+        </ul>
       </div>
 
       <div className="bg-gray-100">
@@ -206,7 +210,6 @@ const About = () => {
           ))}
         </div>
       </div>
-
       <div className="flex flex-col items-center justify-center md:px-24 xl:px-10 w-full mt-8">
         <Footer />
       </div>
