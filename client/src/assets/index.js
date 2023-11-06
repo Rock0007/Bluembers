@@ -16,3 +16,4 @@ export { default as Kapil } from "../assets/Team/Kapil.jpg";
 export { default as Rahul } from "../assets/Team/Rahul.jpg";
 export { default as Ayman } from "../assets/Team/Ayman.jpeg";
 export { default as Rohan } from "../assets/Team/Rohan.jpg";
+export { default as Srikesh } from "../assets/Team/Srikesh.jpg";

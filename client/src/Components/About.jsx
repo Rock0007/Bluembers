@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
-import { Footer } from "../Components";
-import { Amogh, Ayman, Kapil, Rahul, Rohan } from "../assets/index";
+import { Footer, Cart } from "../Components";
+import { Amogh, Ayman, Kapil, Rahul, Rohan, Srikesh } from "../assets/index";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../api";
+import { setAllProducts } from "../context/actions/productActions";
 
 const mentor = {
   name: "Prof. Amogh Deshmukh",
@@ -36,14 +39,32 @@ const students = [
   {
     name: "Sikesh Gaddam",
     role: "Intern",
-    profilePicture: "",
+    profilePicture: Srikesh,
   },
 ];
 
 const About = () => {
+  const products = useSelector((state) => state.products);
+  const isCart = useSelector((state) => state.isCart);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!products) {
+      // Handle API call errors here
+      getAllProducts()
+        .then((data) => {
+          dispatch(setAllProducts(data));
+        })
+        .catch((error) => {
+          // Handle error (e.g., show error message to the user)
+          console.error("Error fetching products:", error);
+        });
+    }
+  }, [dispatch, products]);
   return (
     <div className="w-full min-h-screen bg-lightOverlay overflow-x-hidden">
       <Header />
+      {isCart && <Cart />}
       <div className="container mx-auto mt-28 text-left px-20">
         <h1
           className="text-3xl font-semibold mb-4"
@@ -136,7 +157,7 @@ const About = () => {
       <div className="bg-gray-100">
         <h2
           className="text-3xl font-semibold text-center px-20 py-10"
-          style={{ color: "rgb(6, 143, 255)" }}
+          style={{ color: "rgb(78, 79, 235)" }}
         >
           Tech Team
         </h2>
