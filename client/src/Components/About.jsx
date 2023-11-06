@@ -64,7 +64,7 @@ const About = () => {
   return (
     <div className="w-full min-h-screen bg-lightOverlay overflow-x-hidden ">
       <Header />
-      {isCart && <Cart />}
+
       <div className="container mx-auto text-left px-20 py-28">
         <h1
           className="text-3xl font-semibold mb-4"
@@ -210,6 +210,7 @@ const About = () => {
       <div className="flex flex-col items-center justify-center md:px-24 xl:px-10 w-full mt-8">
         <Footer />
       </div>
+      {isCart && <Cart />}
     </div>
   );
 };
