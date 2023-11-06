@@ -80,7 +80,7 @@ const Header = () => {
             className={({ isActive }) =>
               isActive ? headerActiveStyles : headerNoActiveStyles
             }
-            to={"/aboutus"}
+            to={"/about"}
           >
             About Us
           </NavLink>
@@ -112,7 +112,7 @@ const Header = () => {
                 </Link>
                 <Link
                   className="hover:text-blue-700 text-sm text-textColor"
-                  to={"/aboutus"}
+                  to={"/about"}
                 >
                   About Us
                 </Link>

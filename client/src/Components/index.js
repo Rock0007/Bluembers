@@ -2,6 +2,7 @@ export { default as MainLaoder } from "./MainLoader";
 export { default as Alert } from "./Alert";
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
+export { default as About } from "./About";
 
 export { default as DBLeftSection } from "./DBLeftSection";
 export { default as DBRightSection } from "./DBRightSection";

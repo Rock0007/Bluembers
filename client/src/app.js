@@ -9,6 +9,7 @@ import { setUserDetails } from "./context/actions/userAction";
 import { fadeInOut } from "./Animations";
 import { motion } from "framer-motion";
 import {
+  About,
   Alert,
   CheckOutSuccess,
   MainLaoder,
@@ -64,6 +65,7 @@ const App = () => {
         <Route path="/checkout-success" element={<CheckOutSuccess />} />
         <Route path="/user-orders" element={<UsersOrders />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Alert />
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}

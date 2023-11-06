@@ -11,3 +11,8 @@ export { default as deepspace } from "./img/deepspace.jpg";
 export { default as MdOutlineFastfood } from "./img/MdOutlineFastfood.png";
 export { default as emptycart } from "./img/emptycart.png";
 export { default as Bill2 } from "./img/bill.jpeg";
+export { default as Amogh } from "../assets/Team/Amogh.jpeg";
+export { default as Kapil } from "../assets/Team/Kapil.jpg";
+export { default as Rahul } from "../assets/Team/Rahul.jpg";
+export { default as Ayman } from "../assets/Team/Ayman.jpeg";
+export { default as Rohan } from "../assets/Team/Rohan.jpg";
