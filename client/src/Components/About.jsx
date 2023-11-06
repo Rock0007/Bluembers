@@ -62,10 +62,10 @@ const About = () => {
     }
   }, [dispatch, products]);
   return (
-    <div className="w-full min-h-screen bg-lightOverlay overflow-x-hidden">
+    <div className="w-full min-h-screen bg-lightOverlay overflow-x-hidden ">
       <Header />
       {isCart && <Cart />}
-      <div className="container mx-auto mt-28 text-left px-20">
+      <div className="container mx-auto text-left px-20 py-28">
         <h1
           className="text-3xl font-semibold mb-4"
           style={{ color: "rgb(241, 26, 123)" }}
