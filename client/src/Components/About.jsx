@@ -28,7 +28,7 @@ const students = [
   },
   {
     name: "Ayman Shaikh",
-    role: "Security Analyst ",
+    role: "Security / Deployment",
     profilePicture: Ayman,
   },
   {
